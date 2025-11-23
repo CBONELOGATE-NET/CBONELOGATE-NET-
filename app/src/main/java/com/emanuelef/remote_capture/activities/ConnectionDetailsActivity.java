@@ -36,6 +36,7 @@ import com.emanuelef.remote_capture.CaptureService;
 import com.emanuelef.remote_capture.ConnectionsRegister;
 import com.emanuelef.remote_capture.Log;
 import com.emanuelef.remote_capture.R;
+import com.emanuelef.remote_capture.Utils;
 import com.emanuelef.remote_capture.fragments.ConnectionOverview;
 import com.emanuelef.remote_capture.fragments.ConnectionPayload;
 import com.emanuelef.remote_capture.interfaces.ConnectionsListener;

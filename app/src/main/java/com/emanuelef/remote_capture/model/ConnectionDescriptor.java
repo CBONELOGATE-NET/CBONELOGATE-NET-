@@ -393,11 +393,11 @@ public class ConnectionDescriptor implements HTTPReassembly.ReassemblyListener {
         if((getNumPayloadChunks() == 0) || (firstChunkPos < 0))
             return null;
 
-        // Need to wrap the String to set it from the lambda
+        // Need to wrap the chunk to set it from the lambda
         final AtomicReference<PayloadChunk> rv = new AtomicReference<>();
-
-        HTTPReassembly reassembly = new HTTPReassembly(CaptureService.getCurPayloadMode() == Prefs.PayloadMode.FULL,
-                chunk -> rv.set(new String(chunk.payload, StandardCharsets.UTF_8))
+        HTTPReassembly reassembly = new HTTPReassembly(
+                CaptureService.getCurPayloadMode() == Prefs.PayloadMode.FULL,
+                rv::set
         );
 
         // Possibly reassemble/decode the request
